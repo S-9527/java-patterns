@@ -84,7 +84,7 @@ class FlyweightTest {
     @DisplayName("并发建池：虚拟线程下同一 key 只建一次")
     void concurrentCreationIsRaceFree() throws InterruptedException {
         var key = new MetaKey("电子", "Acme");
-        var results = new ArrayList<ProductMeta>();
+        var results = new java.util.concurrent.ConcurrentLinkedQueue<ProductMeta>();
         var threadCount = 200;
         var start = new CountDownLatch(1);
         var done = new CountDownLatch(threadCount);
