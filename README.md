@@ -10,7 +10,7 @@
 
 ```bash
 mvn clean test                                    # 全部测试
-mvn -q -pl money-decorator exec:java \
+mvn -q -pl money-decorator compile exec:java \
    -Dexec.mainClass=demo.money.Demo              # 单跑一个场景
 
 mvn -q -pl runner -am package                    # 全部场景打成单个可执行 jar
